@@ -22,12 +22,20 @@ make stop-development
 
 ## Running locally
 
-Install the required dependencies using `pnpm install`
+Install the required dependencies using
+
+```bash
+pnpm install
+# or
+npm install
+```
 
 Then, run the development server:
 
 ```bash
 pnpm dev
+# or
+npm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -35,13 +43,17 @@ Open [http://localhost:3000](http://localhost:3000).
 ### Prerequisites
 
 - [pnpm](https://pnpm.io/) package manager
+- or [npm](https://nodejs.org/en) package manager
 
 ## Environment variables
 
 Create a `.env` file which should override environment variables required to run locally:
 
 ```
-NEXT_PUBLIC_API_URL=http://localhost
+# Default
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+NODE_ENV=development
+SERVICE_NAME="UI template"
 ```
 
 ## Testing

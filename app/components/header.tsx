@@ -4,7 +4,9 @@ interface HeaderProps {
   serviceName?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ serviceName = "Service name" }) => {
+export default async function Header({
+  serviceName = process.env.SERVICE_NAME,
+}: HeaderProps) {
   return (
     <>
       <header className="nhsuk-header" role="banner">
@@ -44,6 +46,4 @@ const Header: React.FC<HeaderProps> = ({ serviceName = "Service name" }) => {
       </header>
     </>
   );
-};
-
-export default Header;
+}

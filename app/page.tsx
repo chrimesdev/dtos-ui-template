@@ -1,21 +1,13 @@
 import type { Metadata } from "next";
-import Header from "./components/header";
-import Footer from "./components/footer";
 
 export const metadata: Metadata = {
-  title: "Hello world - UI template",
+  title: `Hello world - ${process.env.SERVICE_NAME}`,
 };
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <div className="nhsuk-width-container">
-        <main className="nhsuk-main-wrapper" id="maincontent" role="main">
-          <h1>Hello world</h1>
-        </main>
-      </div>
-      <Footer />
-    </>
+    <main className="nhsuk-main-wrapper" id="maincontent" role="main">
+      <h1>Hello world</h1>
+    </main>
   );
 }

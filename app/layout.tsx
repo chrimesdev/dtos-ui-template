@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Header from "@/app/components/header";
+import Footer from "@/app/components/footer";
 import "./globals.scss";
 
 export const metadata: Metadata = {
@@ -11,9 +13,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const serviceName = process.env.SERVICE_NAME;
   return (
     <html lang="en">
-      <body className="js-enabled">{children}</body>
+      <body>
+        <Header serviceName={serviceName} />
+        <div className="nhsuk-width-container">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }
